@@ -8,7 +8,7 @@ async function create(data) {
         const user = await userRepo.create(data);
         return user;
     } catch(error) {
-        console.log("service is",error.message);
+        // console.log("service is",error.message);
         if(error.name == 'SequelizeValidationError' || error.name == 'SequelizeUniqueConstraintError') {
             let explanation = [];
             error.errors.forEach((err) => {
